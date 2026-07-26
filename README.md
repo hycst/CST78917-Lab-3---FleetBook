@@ -258,6 +258,11 @@ The web client retrieves topic messages using receive-and-delete mode. After the
 - The direct browser-to-Service-Bus approach is used only for this lab.
 - A production system should use a backend API or managed identity.
 
+#### Explanation of the Topic subscriptions showing filtered message counts
+
+In this lab, there are the two topic subscriptions, confirmed-sub and rejected-sub. The Logic App publishes the booking result to the topic, and the Service Bus filter routes it to the correct subscription. In this lab, the FleetBook client uses Receive-and-Delete mode, so once the dashboard receives the message, the subscription count returns to zero.
+
+
 #### Demo Video
 
 
