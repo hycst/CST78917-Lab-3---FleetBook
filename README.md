@@ -94,7 +94,7 @@ The Function App includes:
 Health-check URL:
 
 ```text
-https://<function-app-name>.azurewebsites.net/api/health
+https://fleetbook-func-hy-eef8eue9ddaae2g4.canadacentral-01.azurewebsites.net/api/health
 ```
 
 Expected response:
@@ -172,6 +172,7 @@ After deployment, verify:
 
 ```text
 https://<function-app-name>.azurewebsites.net/api/health
+Actual URL in this lab: https://fleetbook-func-hy-eef8eue9ddaae2g4.canadacentral-01.azurewebsites.net/api/health
 ```
 
 #### Logic App Workflow
@@ -212,8 +213,8 @@ The SAS key must be entered only for local testing. Never commit it to GitHub.
 Use values similar to:
 
 ```text
-Customer Name: Jane Doe
-Customer Email: your-email@example.com
+Customer Name: Jane Ottawa
+Customer Email: h*****@outlook.com
 Vehicle Type: Sedan
 Pickup Location: Ottawa
 ```
@@ -231,8 +232,8 @@ Expected result:
 Use values similar to:
 
 ```text
-Customer Name: John Smith
-Customer Email: your-email@example.com
+Customer Name: John Montreal
+Customer Email: h*****@outlook.com
 Vehicle Type: Sedan
 Pickup Location: Montreal
 ```
@@ -259,8 +260,6 @@ The web client retrieves topic messages using receive-and-delete mode. After the
 
 #### Demo Video
 
-Add the final YouTube URL here:
 
-```text
-Demo: https://youtu.be/UqbAysO--ZY
-```
+Demo Video: https://youtu.be/UqbAysO--ZY
+
