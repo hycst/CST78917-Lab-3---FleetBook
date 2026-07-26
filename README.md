@@ -1,8 +1,8 @@
-# CST8917 Lab 3 — FleetBook
+#### CST8917 Lab 3 — FleetBook
 
-FleetBook is a serverless vehicle-booking workflow built with Azure Service Bus, Azure Logic Apps, Azure Functions, Outlook, and a browser-based HTML client.
+For Lab3, FleetBook is a serverless vehicle-booking workflow built with Azure Service Bus, Azure Logic Apps, Azure Functions, Outlook, and a browser-based HTML client.
 
-## Architecture
+#### Architecture
 
 ```text
 FleetBook Web Client
@@ -29,7 +29,7 @@ Service Bus Topic: booking-results
 FleetBook dashboard polls and displays the result
 ```
 
-## Features
+#### Features
 
 - Submits vehicle-booking requests from a single-file HTML client.
 - Sends booking requests to Azure Service Bus through its REST API.
@@ -41,7 +41,7 @@ FleetBook dashboard polls and displays the result
 - Updates the browser dashboard from Pending to Confirmed or Rejected.
 - Applies add-on charges and a 10% weekly discount for rentals of seven days or more.
 
-## Repository Files
+#### Repository Files
 
 ```text
 .
@@ -57,7 +57,7 @@ FleetBook dashboard polls and displays the result
 
 Do not commit `local.settings.json`, SAS keys, connection strings, or other secrets.
 
-## Azure Resources
+#### Azure Resources
 
 The solution requires:
 
@@ -70,7 +70,7 @@ The solution requires:
 - One Consumption Logic App
 - One Outlook.com or Microsoft 365 connection
 
-### Subscription filters
+#### Subscription filters
 
 Configure the subscriptions with SQL filters:
 
@@ -84,7 +84,7 @@ sys.label = 'confirmed'
 sys.label = 'rejected'
 ```
 
-## Azure Function
+#### Azure Function
 
 The Function App includes:
 
@@ -107,9 +107,9 @@ Expected response:
 }
 ```
 
-## Local Setup
+#### Local Setup
 
-### Prerequisites
+#### Prerequisites
 
 - Python 3.12
 - Azure Functions Core Tools 4
@@ -120,7 +120,7 @@ Expected response:
 - Azurite extension
 - Live Server extension
 
-### Create and activate a virtual environment
+#### Create and activate a virtual environment
 
 PowerShell:
 
@@ -131,7 +131,7 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned
 pip install -r requirements.txt
 ```
 
-### Local settings
+#### Local settings
 
 Create `local.settings.json` from the example file:
 
@@ -154,7 +154,7 @@ Start Azurite and then run:
 func start
 ```
 
-## Deploy the Function App
+#### Deploy the Function App
 
 Sign in:
 
@@ -174,7 +174,7 @@ After deployment, verify:
 https://<function-app-name>.azurewebsites.net/api/health
 ```
 
-## Logic App Workflow
+#### Logic App Workflow
 
 The `process-booking` Logic App contains:
 
@@ -191,7 +191,7 @@ The `process-booking` Logic App contains:
    - Send rejection email.
    - Publish to `booking-results` with label `rejected`.
 
-## Run the Web Client
+#### Run the Web Client
 
 Open `client.html` using Live Server:
 
@@ -207,7 +207,7 @@ Expand **Service Bus Configuration** and enter:
 
 The SAS key must be entered only for local testing. Never commit it to GitHub.
 
-## Test a Confirmed Booking
+#### Test a Confirmed Booking
 
 Use values similar to:
 
@@ -226,7 +226,7 @@ Expected result:
 - Result published with label `confirmed`
 - Dashboard updated to Confirmed with vehicle and pricing information
 
-## Test a Rejected Booking
+#### Test a Rejected Booking
 
 Use values similar to:
 
@@ -245,11 +245,11 @@ Expected result:
 - Result published with label `rejected`
 - Dashboard updated to Rejected with the reason
 
-## Important Testing Note
+#### Important Testing Note
 
 The web client retrieves topic messages using receive-and-delete mode. After the dashboard consumes a result, the active-message count in the corresponding subscription can return to zero. Peek at subscription messages before the client consumes them when a screenshot of the count is required.
 
-## Security
+#### Security
 
 - Never commit `local.settings.json`.
 - Never commit SAS keys or connection strings.
@@ -257,14 +257,10 @@ The web client retrieves topic messages using receive-and-delete mode. After the
 - The direct browser-to-Service-Bus approach is used only for this lab.
 - A production system should use a backend API or managed identity.
 
-## Demo Video
+#### Demo Video
 
 Add the final YouTube URL here:
 
 ```text
 Demo: <YouTube URL>
 ```
-
-## Author
-
-Hesheng Yang
