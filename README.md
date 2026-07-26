@@ -262,5 +262,5 @@ The web client retrieves topic messages using receive-and-delete mode. After the
 Add the final YouTube URL here:
 
 ```text
-Demo: <YouTube URL>
+Demo: https://youtu.be/UqbAysO--ZY
 ```
