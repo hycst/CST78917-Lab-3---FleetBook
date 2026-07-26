@@ -892,8 +892,16 @@
 
         function startPolling() {
             if (pollingInterval) return;
+
+             log('Waiting 60 seconds before polling for results...', 'info');
+
+            setTimeout(() => {
+
             pollingInterval = setInterval(checkResults, 5000);
+
             log('Polling topic subscriptions for results every 5s...', 'info');
+
+            }, 60000);   // 30 seconds
         }
 
         function stopPolling() {
